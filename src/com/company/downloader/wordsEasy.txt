@@ -1,0 +1,3 @@
+apple:jabłko
+wood:drewno
+stone:kamień
