@@ -8,9 +8,14 @@ import java.util.List;
 
 
 class HardMode implements GameMode {
+
     private static final int PROPORTION_OF_HARD_MODE = 8;
-    private final WordsCreator wordsCreator = new WordsCreator();
+    private final WordsCreator wordsCreator;
     private final List<Word> hardModWords = new ArrayList<>();
+
+    public HardMode(WordsCreator wordsCreator) {
+        this.wordsCreator = wordsCreator;
+    }
 
     @Override
     public List<Word> words() {

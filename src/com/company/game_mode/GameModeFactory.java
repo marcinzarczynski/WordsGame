@@ -1,14 +1,16 @@
 package com.company.game_mode;
 
 
+import com.company.words.WordsCreator;
+
 public class GameModeFactory {
-    public static GameMode selectGameMode(String level) {
+    public static GameMode selectGameMode(String level, WordsCreator wordsCreator) {
         if (level.equals("Easy")) {
-            return new EasyMode();
+            return new EasyMode(wordsCreator);
         } else if (level.equals("Mid")) {
-            return new MidMode();
+            return new MidMode(wordsCreator);
         } else {
-            return new HardMode();
+            return new HardMode(wordsCreator);
         }
     }
 }

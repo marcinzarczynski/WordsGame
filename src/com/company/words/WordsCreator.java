@@ -8,7 +8,11 @@ import java.util.Map;
 
 public class WordsCreator {
 
-    WordsCollector wordsCollector = new WordsCollector();
+    WordsCreator (WordsCollector wordsCollector){
+        this.wordsCollector = wordsCollector;
+    }
+
+    WordsCollector wordsCollector;
 
     public List<Word> getWordsEasy(){
 

@@ -8,9 +8,14 @@ import java.util.List;
 
 
 class MidMode implements GameMode {
+
     private static final int PROPORTION_OF_MID_MODE = 12;
-    private final WordsCreator wordsCreator = new WordsCreator();
+    private final WordsCreator wordsCreator;
     private final List<Word> midModWords = new ArrayList<>();
+
+    public MidMode(WordsCreator wordsCreator) {
+        this.wordsCreator = wordsCreator;
+    }
 
     @Override
     public List<Word> words() {

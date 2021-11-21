@@ -7,9 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 class EasyMode implements GameMode {
+
     private static final int PROPORTION_OF_EASY_MODE = 24;
-    private final WordsCreator wordsCreator = new WordsCreator();
+    private final WordsCreator wordsCreator;
     private final List<Word> easyModWords = new ArrayList<>();
+
+    EasyMode (WordsCreator wordsCreator){
+        this.wordsCreator = wordsCreator;
+    }
 
     @Override
     public List<Word> words() {
