@@ -1,7 +1,6 @@
 public class Game {
 
 
-
 //    public Game{
 //
 //    }
@@ -15,9 +14,6 @@ public class Game {
 //    public void answerIsGoodOrNo{
 //
 //    }
-
-
-
 
 
 }

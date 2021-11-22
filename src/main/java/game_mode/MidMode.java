@@ -1,7 +1,6 @@
 package game_mode;
 
 
-
 import words.Word;
 import words.WordsCreator;
 

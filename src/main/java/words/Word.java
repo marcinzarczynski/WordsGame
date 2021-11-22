@@ -1,6 +1,6 @@
 package words;
 
-
+import java.awt.*;
 
 public class Word {
     String pl;

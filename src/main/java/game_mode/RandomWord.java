@@ -1,7 +1,5 @@
 package game_mode;
 
-
-
 import words.Word;
 
 import java.util.List;

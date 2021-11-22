@@ -1,6 +1,5 @@
 package game_mode;
 
-
 import words.WordsCreator;
 
 public class GameModeFactory {
