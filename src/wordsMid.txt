@@ -28,6 +28,3 @@ candy:cukierek
 sugar:cukier
 shoe:but
 finger:palec
-
-
-

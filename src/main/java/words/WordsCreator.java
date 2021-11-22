@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class WordsCreator {
 
-    WordsCreator (WordsCollector wordsCollector){
+    public WordsCreator (WordsCollector wordsCollector){
         this.wordsCollector = wordsCollector;
     }
 

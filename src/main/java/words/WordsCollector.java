@@ -5,16 +5,16 @@ import downloader.DownloaderFactory;
 import java.io.IOException;
 import java.util.Map;
 
-class WordsCollector {
+public class WordsCollector {
 
     final private Map<String, String> easyWords;
     final private Map<String, String> mediumWords;
     final private Map<String, String> hardWords;
 
     public WordsCollector() throws IOException {
-        easyWords = DownloaderFactory.buildDownloader("txt").download("wordsEasy.txt");
-        mediumWords = DownloaderFactory.buildDownloader("txt").download("mediumEasy.txt");
-        hardWords = DownloaderFactory.buildDownloader("txt").download("hardEasy.txt");
+        easyWords = DownloaderFactory.buildDownloader("txt").download("src\\wordsEasy.txt");
+        mediumWords = DownloaderFactory.buildDownloader("txt").download("src\\wordsMid.txt");
+        hardWords = DownloaderFactory.buildDownloader("txt").download("src\\wordsHard.txt");
     }
 
     Map<String, String> getEasyWords() {

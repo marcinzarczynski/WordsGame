@@ -26,4 +26,3 @@ seal:foka
 audio:muzyka
 edge:krawędź
 end:koniec
-
