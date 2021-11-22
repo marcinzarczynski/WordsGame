@@ -5,27 +5,30 @@ import words.Word;
 import words.WordsCreator;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 class EasyMode implements GameMode {
 
     private static final int PROPORTION_OF_EASY_MODE = 24;
     private final WordsCreator wordsCreator;
-    private final List<Word> easyModWords = new ArrayList<>();
+    private final List<Word> easyModWords;
 
     EasyMode (WordsCreator wordsCreator){
         this.wordsCreator = wordsCreator;
+        this.easyModWords = getProportionEasyModWords();
     }
 
     @Override
     public List<Word> words() {
-        setProportioneasyModWords();
         return easyModWords;
     }
 
-    private void setProportioneasyModWords() {
+    private List<Word> getProportionEasyModWords() {
+        List<Word> words = new LinkedList<>();
         for (int i = 0; i < PROPORTION_OF_EASY_MODE; i++) {
-            easyModWords.add(RandomWord.getRandomItem(PROPORTION_OF_EASY_MODE - i, wordsCreator.getWordsEasy()));
+            words.add(RandomWord.getRandomItem(PROPORTION_OF_EASY_MODE - i, wordsCreator.getWordsEasy()));
         }
+        return words;
     }
 }

@@ -1,10 +1,15 @@
+import game_mode.GameMode;
+import game_mode.GameModeFactory;
+
 public class Game {
 
+private final GameMode gameMode;
 
-//    public Game{
-//
-//    }
-//
+
+    public Game(GameMode gamemode){
+        this.gameMode = gamemode;
+    }
+
 //    public void start(){
 //        GameMode gameMode = GameModeFactory.selectGameMode("Easy");
 //    }
@@ -14,6 +19,5 @@ public class Game {
 //    public void answerIsGoodOrNo{
 //
 //    }
-
 
 }
