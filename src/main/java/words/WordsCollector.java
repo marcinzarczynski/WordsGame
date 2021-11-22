@@ -13,8 +13,8 @@ public class WordsCollector {
 
     public WordsCollector() throws IOException {
         easyWords = DownloaderFactory.buildDownloader("txt").download("src\\wordsEasy.txt");
-        mediumWords = DownloaderFactory.buildDownloader("txt").download("src\\mediumEasy.txt");
-        hardWords = DownloaderFactory.buildDownloader("txt").download("src\\hardEasy.txt");
+        mediumWords = DownloaderFactory.buildDownloader("txt").download("src\\wordsMid.txt");
+        hardWords = DownloaderFactory.buildDownloader("txt").download("src\\wordsHard.txt");
     }
 
     Map<String, String> getEasyWords() {

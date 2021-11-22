@@ -36,5 +36,4 @@ class MidMode implements GameMode {
             midModWords.add(RandomWord.getRandomItem(PROPORTION_OF_MID_MODE-i,wordsCreator.getWordsMedium()));
         }
     }
-
 }
