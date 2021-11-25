@@ -4,7 +4,6 @@ package game_mode;
 import words.Word;
 import words.WordsCreator;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

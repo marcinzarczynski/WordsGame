@@ -1,9 +1,9 @@
 package game_mode;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -20,8 +20,14 @@ class MidModeTest {
     @Mock
     private WordsCreator wordsCreator;
 
-    @InjectMocks
     private MidMode sut;
+
+    @BeforeEach
+    public void setUp(){
+        Mockito.when(wordsCreator.getWordsEasy()).thenReturn(createWords(Point.EASY,20));
+        Mockito.when(wordsCreator.getWordsMedium()).thenReturn(createWords(Point.MID,23));
+        sut = new MidMode(wordsCreator);
+    }
 
     private List<Word> createWords(Point point, int size) {
         List<Word> wordsAll = new LinkedList<>();
@@ -36,17 +42,13 @@ class MidModeTest {
     }
 
     @Test
-    void shouldCreateHardMod() {
-        Mockito.when(wordsCreator.getWordsEasy()).thenReturn(createWords(Point.EASY, 25));
-        Mockito.when(wordsCreator.getWordsMedium()).thenReturn(createWords(Point.MID, 25));
-
+    void shouldCreateMidMod() {
         List<Word> result = sut.words();
         List<Word> expectedWords = createWords(Point.EASY, 12);
         expectedWords.addAll(createWords(Point.MID, 12));
 
         Assertions.assertNotNull(result);
-        Assertions.assertTrue(expectedWords.containsAll(expectedWords));
-
+        Assertions.assertTrue(result.containsAll(expectedWords));
     }
 
 }

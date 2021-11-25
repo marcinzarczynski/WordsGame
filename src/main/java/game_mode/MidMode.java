@@ -12,28 +12,33 @@ class MidMode implements GameMode {
 
     private static final int PROPORTION_OF_MID_MODE = 12;
     private final WordsCreator wordsCreator;
-    private final List<Word> midModWords = new ArrayList<>();
+    private List<Word> midModWords = new ArrayList<>();
+    private List<Word> words = new ArrayList<>();
 
     public MidMode(WordsCreator wordsCreator) {
         this.wordsCreator = wordsCreator;
+        this.words = getProportionMidModWords();
+        this.midModWords = words;
     }
 
     @Override
-    public List<Word> words() {
+    public List<Word> words() { return midModWords; }
+
+    private List<Word> getProportionMidModWords(){
         setProportionEasyWords();
         setProportionMediumWords();
-        return midModWords;
+        return words;
     }
 
     private void setProportionEasyWords() {
         for (int i = 0; i < PROPORTION_OF_MID_MODE; i++) {
-            midModWords.add(RandomWord.getRandomItem(PROPORTION_OF_MID_MODE-i,wordsCreator.getWordsEasy()));
+           words.add(RandomWord.getRandomItem(PROPORTION_OF_MID_MODE-i,wordsCreator.getWordsEasy()));
         }
     }
 
     private void setProportionMediumWords() {
         for (int i = 0; i < PROPORTION_OF_MID_MODE; i++) {
-            midModWords.add(RandomWord.getRandomItem(PROPORTION_OF_MID_MODE-i,wordsCreator.getWordsMedium()));
+            words.add(RandomWord.getRandomItem(PROPORTION_OF_MID_MODE-i,wordsCreator.getWordsMedium()));
         }
     }
 }

@@ -4,7 +4,6 @@ import words.Word;
 import words.WordsCreator;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -17,8 +16,8 @@ class HardMode implements GameMode {
 
     public HardMode(WordsCreator wordsCreator) {
         this.wordsCreator = wordsCreator;
-        this.words=getProportionHardModWords();
-        this.hardModWords= words;
+        this.words = getProportionHardModWords();
+        this.hardModWords = words;
     }
 
     @Override
