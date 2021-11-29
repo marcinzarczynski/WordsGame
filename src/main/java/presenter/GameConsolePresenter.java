@@ -1,27 +1,25 @@
 package presenter;
 
-import game.Game;
-import presenter.Presenter;
+import game.GameMenager;
 
 public class GameConsolePresenter implements Presenter {
 
-    final Game game;
-    public String currentLettersFromRequest;
+    final GameMenager gameMenager;
+    public String currentLettersFromRequest = "";
 
-    public GameConsolePresenter(Game game){
-        this.game = game;
+    public GameConsolePresenter(GameMenager gameMenager){
+        this.gameMenager = gameMenager;
     }
 
     @Override
     public void showGame(){
-        System.out.println(game.getWord(1));
-        currentLettersFromRequest += game.getLetter();
+        currentLettersFromRequest = gameMenager.giveHint();
         System.out.println(currentLettersFromRequest);
-        currentLettersFromRequest += game.getLetter();
+        currentLettersFromRequest = gameMenager.giveHint();
         System.out.println(currentLettersFromRequest);
-        currentLettersFromRequest += game.getLetter();
+        currentLettersFromRequest = gameMenager.giveHint();
         System.out.println(currentLettersFromRequest);
-        currentLettersFromRequest += game.getLetter();
+        currentLettersFromRequest = gameMenager.giveHint();
         System.out.println(currentLettersFromRequest);
     }
     //Wyświetlanie slowek

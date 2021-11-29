@@ -1,4 +1,5 @@
 import game.Game;
+import game.GameMenager;
 import presenter.GameConsolePresenter;
 import presenter.Presenter;
 import words.WordsCollector;
@@ -12,9 +13,8 @@ public class Main {
         WordsCollector wordsCollector = new WordsCollector();
         WordsCreator wordsCreator = new WordsCreator(wordsCollector);
         Game game = new Game("Easy", wordsCreator);
-        Presenter presenter = new GameConsolePresenter(game);
+        GameMenager gameMenager = new GameMenager(game);
+        Presenter presenter = new GameConsolePresenter(gameMenager);
         presenter.showGame();
-
-        // tworzy tylko gre i daje start
     }
 }
